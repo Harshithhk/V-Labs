@@ -17,6 +17,7 @@ header {
   align-items: center;
   color: white;
   letter-spacing: 1px;
+  box-shadow: 0 0 3px black;
 }
 section {
   /* background-color: gray; */
@@ -111,11 +112,11 @@ section {
   display: flex;
   align-items: center;
 }
+.highlight {
+  background-color: yellow;
+}
 .comment {
   color: gray;
-}
-.hello1 {
-  /* background-color: yellow; */
 }
 
 .padding1 {
@@ -132,6 +133,10 @@ section {
   margin-top: var(--ph);
   /* background-color: violet; */
 }
+.hide {
+  display: none;
+}
+
 .arrowKeys {
   width: 50%;
   height: 100px;
@@ -155,6 +160,20 @@ button {
 }
 button:hover {
   background-color: #17389c;
+}
+.rounded-button {
+  height: 180px;
+  width: 180px;
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(112, 107, 218);
+  box-shadow: 0 0 5px black;
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* __________EXPLAINATION SECTION_________________ */
@@ -191,21 +210,25 @@ button:hover {
 }
 .sum {
   height: 35px;
-  width: 26ch;
+  width: 23ch;
   display: flex;
   /* padding-left: 0; */
 
+  /* background: rgb(212, 214, 212); */
   background: rgb(212, 214, 212);
+  /* background: rgb(234, 240, 250); */
 }
 .sum div {
   height: 100%;
   width: 200px;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(206, 204, 204);
+  background: rgb(199, 199, 199);
+  /* background: rgb(220, 250, 220); */
+
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -222,7 +245,7 @@ button:hover {
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .img {
   margin: auto;
@@ -246,4 +269,5 @@ button:hover {
 
 .text {
   margin: 0rem 2rem 0rem 2rem;
+  font-size: 1rem;
 }

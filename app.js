@@ -1,13 +1,45 @@
 var code = document.querySelector('.code')
-var img = document.querySelector('.img')
+var controller = document.querySelector('.controller')
+var startBtn = document.querySelector('.rounded-button')
+var num1 = document.querySelector('.num1')
+var num2 = document.querySelector('.num2')
 
-img.addEventListener('click',()=>{
-    img.classList.toggle('imgclick')
-})
+// START FUNCTION
+const start =()=>{
+    startBtn.classList.replace('rounded-button','hide')
+    controller.classList.remove('hide')
+    document.querySelector(`.hello0`).classList.add('highlight')
+}
 
-code.addEventListener('click',()=>{
-    console.log("CODE")
-})
+// CONTROLLERS
+var ln=1;
+var pl=0;
+const next =()=>{
+    if(ln!==11){
+        document.querySelector(`.hello${ln}`).classList.add('highlight')
+        if(ln!==0){
+        document.querySelector(`.hello${pl}`).classList.remove('highlight')
+        }
+        if(ln == 3){
+            num1.textContent="10"
+            num2.textContent="0x7fff5694dc58"
+        }
+        pl=ln
+        ln++
+    }
+    console.log(pl,ln) 
+}
+const previous =()=>{
+    if(pl !=0 ){
+        pl--
+        ln--
+        document.querySelector(`.hello${pl}`).classList.add('highlight')
+        document.querySelector(`.hello${ln}`).classList.remove('highlight')
+    }
+    console.log(pl,ln)
+}
+
+// SEEDING DATA INTO CODE SECTION
 var data =`#include <stdio.h>
 	int main()
 	{
@@ -19,10 +51,9 @@ var data =`#include <stdio.h>
    	printf("\\nAddress of variable num is: %p", &num);
   	 return 0;
     }` 
-    
-    console.log(typeof(data))
+
     var splittedData = data.split("\n")
-    console.log(splittedData.length)
+
 
     for(i=0; i<splittedData.length ; i++){
         var li = document.createElement('div')

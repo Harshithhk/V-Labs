@@ -23,33 +23,42 @@
                 <div>Address of variable num is: 0x7fff5694dc58</div>
             </div>
         </div>
+        <!--___________________ CONTROLLERS_______________ -->
+
+
         <div class="controlers">
-            <h1>Use</h1>
-            <div class="arrowKeys"></div>
-            <!-- <h5>(arrow_keys)</h5> -->
-            <h4>or</h4>
-            <button>Next</button>
-            <button>Previous</button>
+            <div class="controller hide">
+                <h1>Use</h1>
+                <div class="arrowKeys"></div>
+                <h4>or</h4>
+                <button onclick="next()">Next</button>
+                <button onclick="previous()">Previous</button>
+            </div>
+            
+                <div>
+                    <div class="rounded-button" onclick="start()">START</div>
+                </div>
+            
+            
         </div>
+
+
         <div class="explaination">
-            <div class="visualization">
-               
-                <div class="heading">Summary</div>
-                
+            <div class="visualization">              
+                <div class="heading">Summary</div>               
                 <div style="display: flex; width: 100%; justify-content: space-around; margin-top: 1rem;">
-                <div class="sum"><div>int<span>num </span></div><span class="num1 num"> 10</span> </div>
-                <div class="sum"><div><span>&num </span></div><span class="num1 num"> 0x7fff5694dc58</span>
+                <div class="sum"><div>int<span>num </span></div><span class="num1 num">---</span> </div>
+                <div class="sum"><div><span>&num </span></div><span class="num2 num">---</span>
                 </div>
                 </div>
                 
                 <div class="img"></div> 
                 
-                
             </div>
             <div class="theory">
                 <div class="heading">Explaination</div>
                 <div class="text">
-                    <span>line 1:</span>
+                    <span><b>line 1:</b></span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex commodi sequi tempore? Accusamus illo saepe architecto earum, minima eum odit!</p>
                 </div>
             </div>
