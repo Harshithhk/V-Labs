@@ -3,6 +3,9 @@ var controller = document.querySelector('.controller')
 var startBtn = document.querySelector('.rounded-button')
 var num1 = document.querySelector('.num1')
 var num2 = document.querySelector('.num2')
+var output1 = document.querySelector('.output1')
+var output2 = document.querySelector('.output2')
+var img = document.querySelector('.img')
 
 // START FUNCTION
 const start =()=>{
@@ -17,6 +20,14 @@ const reset =()=>{
 
     num1.textContent="---"
     num2.textContent="---"
+    output1.textContent="---"
+    output2.textContent="---"
+    num1.classList.remove('blip')
+    num2.classList.remove('blip')
+    output1.classList.remove('flash')
+    output2.classList.remove('flash')
+    img.classList.add('img2')
+    
     ln=1
     pl=0
 }
@@ -33,7 +44,19 @@ const next =()=>{
         if(ln == 3){
             num1.textContent="10"
             num2.textContent="0x7fff5694dc58"
+            num1.classList.add('blip')
+            num2.classList.add('blip')
+            img.classList.remove('img2')
         }
+        if(pl==3){
+            output1.textContent="Value of variable num is: 10"
+            output1.classList.add('flash')
+        }
+        if(pl==4){
+            output2.textContent="Address of variable num is: 0x7fff5694dc58"
+            output2.classList.add('flash')
+        }
+        console.log(pl,ln) 
         pl=ln
         if(ln == 4){
             ln=7

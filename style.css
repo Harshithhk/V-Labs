@@ -114,6 +114,7 @@ section {
 }
 .highlight {
   background-color: yellow;
+  border-left: 5px solid rgb(10, 202, 10);
 }
 .comment {
   color: gray;
@@ -278,9 +279,13 @@ button:active {
   height: 100px;
   width: 70%;
   min-width: 210px;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: 0.3s;
   /* box-shadow: 0 0 5px var(--accent2); */
+}
+.img2 {
+  background-image: url(./images/pic2-blank.jpg);
+  opacity: 0.7;
 }
 .theory {
   height: 50%;
@@ -294,3 +299,28 @@ button:active {
   margin: 0rem 2rem 0rem 2rem;
   font-size: 1rem;
 }
+
+.blip {
+  border: 5px solid yellow;
+  animation: blip 1.5s ease-in-out;
+}
+.flash {
+  animation: flash 1s ease-in-out;
+}
+@keyframes blip {
+  from {
+    /* background: rgb(60, 60, 252); */
+    background: yellow;
+  }
+  to {
+    background: rgb(212, 214, 212);
+  }
+}
+/* @keyframes flash {
+  from {
+    color: blue;
+  }
+  to {
+    color: black;
+  }
+} */
