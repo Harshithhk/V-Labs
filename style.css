@@ -156,10 +156,20 @@ button {
   border: none;
   font-size: 1.25rem;
   color: white;
-  background-color: rgb(134, 132, 173);
+  /* background-color: rgb(134, 132, 173); */
+  background-color: var(--accent);
 }
 button:hover {
+  cursor: pointer;
   background-color: #17389c;
+  /* box-shadow: 0 0 10px greenyellow; */
+}
+button:focus {
+  outline: none;
+}
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 20px greenyellow;
 }
 .rounded-button {
   height: 180px;
@@ -172,8 +182,19 @@ button:hover {
   justify-content: center;
   background-color: rgb(112, 107, 218);
   box-shadow: 0 0 5px black;
+  box-shadow: 0 0 10px greenyellow;
   color: white;
   font-size: 1.5rem;
+}
+.reset-btn {
+  cursor: pointer;
+  background-color: rgb(238, 235, 235);
+  width: 50%;
+  height: 30px;
+  color: rgb(105, 104, 104);
+}
+.reset-btn:hover {
+  background-color: rgb(190, 190, 190);
 }
 
 /* __________EXPLAINATION SECTION_________________ */
@@ -212,6 +233,7 @@ button:hover {
   height: 35px;
   width: 23ch;
   display: flex;
+  margin-bottom: 0.5rem;
   /* padding-left: 0; */
 
   /* background: rgb(212, 214, 212); */
@@ -255,6 +277,7 @@ button:hover {
   background-size: contain;
   height: 100px;
   width: 70%;
+  min-width: 210px;
   opacity: 0.7;
   transition: 0.3s;
   /* box-shadow: 0 0 5px var(--accent2); */

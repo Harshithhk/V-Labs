@@ -10,10 +10,20 @@ const start =()=>{
     controller.classList.remove('hide')
     document.querySelector(`.hello0`).classList.add('highlight')
 }
+const reset =()=>{
+    controller.classList.remove('hide')
+    document.querySelector(`.hello0`).classList.add('highlight')
+    document.querySelector(`.hello${pl}`).classList.remove('highlight')
+
+    num1.textContent="---"
+    num2.textContent="---"
+    ln=1
+    pl=0
+}
 
 // CONTROLLERS
-var ln=1;
-var pl=0;
+var ln=1
+var pl=0
 const next =()=>{
     if(ln!==11){
         document.querySelector(`.hello${ln}`).classList.add('highlight')
@@ -25,6 +35,9 @@ const next =()=>{
             num2.textContent="0x7fff5694dc58"
         }
         pl=ln
+        if(ln == 4){
+            ln=7
+        }
         ln++
     }
     console.log(pl,ln) 
@@ -33,8 +46,15 @@ const previous =()=>{
     if(pl !=0 ){
         pl--
         ln--
+        if(ln == 8){
+            pl=4  
+        }
+        if(pl==3 && ln==7){
+            ln=4
+        }
         document.querySelector(`.hello${pl}`).classList.add('highlight')
         document.querySelector(`.hello${ln}`).classList.remove('highlight')
+        
     }
     console.log(pl,ln)
 }
