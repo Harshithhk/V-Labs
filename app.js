@@ -14,21 +14,22 @@ var text = document.querySelector('.text')
 const start =()=>{
     startBtn.classList.replace('rounded-button','hide')
     controller.classList.remove('hide')
+    
     document.querySelector(`.hello0`).classList.add('highlight')
-    text.innerHTML='<b>line1:</b> <p>Including standard input output header file</p>'
+    text.innerHTML=splitterExpl[0]
 
     window.addEventListener('keydown',(e)=>{
     console.log(e)
+    
      if (e.key == 'ArrowUp') {
-        // up arrow
         previous()
     }
     else if (e.key == 'ArrowDown') {
-        // down arrow
         next()
-    }
-    })
+    }})
 }
+
+// RESET FUNCTION
 const reset =()=>{
     controller.classList.remove('hide')
     document.querySelector(`.hello0`).classList.add('highlight')
@@ -53,12 +54,12 @@ const reset =()=>{
 // CONTROLLERS
 var ln=1
 var pl=0
+// NEXT FUNCTION
 const next =()=>{
     if(ln!==11){
         document.querySelector(`.hello${ln}`).classList.add('highlight')
-        if(ln!==0){
         document.querySelector(`.hello${pl}`).classList.remove('highlight')
-        }
+
         if(ln == 3){
             num1.textContent="10"
             num2.textContent="0x7fff5694dc58"
@@ -67,16 +68,16 @@ const next =()=>{
             img.classList.remove('img2')
         }
         if(pl==2){
-            text.innerHTML='<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>'
+            text.innerHTML=splitterExpl[1]
         }
         if(pl==3){
             output1.textContent=">Value of variable num is: 10"
-            text.innerHTML='<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>'
+            text.innerHTML=splitterExpl[2]
             
         }
         if(pl==4){
             output2.textContent=">Address of variable num is: 0x7fff5694dc58"
-            text.innerHTML='<b>line9: </b><p>Print Statement which prints the <b>address</b> of the variable <b>num</b></p><p><b>%p</b> tells printf that the corresponding argument to be printed is of a pointer type data;</p>'
+            text.innerHTML=splitterExpl[3]
         }
         console.log(pl,ln) 
         pl=ln
@@ -88,17 +89,20 @@ const next =()=>{
     console.log(pl,ln) 
 }
 const previous =()=>{
-    
     if(pl !=0 ){
         pl--
         ln--
-        if (pl ==0){
-            text.innerHTML='<b>line1:</b> <p>Including standard input output header file</p>'
+        if (pl ==2){
+            text.innerHTML=splitterExpl[0]
         }
         if(ln == 8){
             pl=4  
         }
-        
+        if(pl==3 && ln==7){
+            text.innerHTML=splitterExpl[1]
+            output1.innerHTML=""
+            ln=4
+        }   
         if(pl==2){
             num1.classList.remove('blip')
             num2.classList.remove('blip')
@@ -106,23 +110,18 @@ const previous =()=>{
             num2.textContent="---"
             img.classList.add('img2')
         }
-        if(pl==3 && ln==7){
-            text.innerHTML='<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>'
-            output1.innerHTML=""
-            ln=4
-        }
         if(pl==4){
              output2.textContent=""
-            text.innerHTML='<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>'
+            text.innerHTML=splitterExpl[2]
         }
+
         document.querySelector(`.hello${pl}`).classList.add('highlight')
-        document.querySelector(`.hello${ln}`).classList.remove('highlight')
-        
+        document.querySelector(`.hello${ln}`).classList.remove('highlight') 
     }
     console.log(pl,ln)
 }
 
-// SEEDING DATA INTO CODE SECTION
+// DATA FOR CODE SECTION
 var data =`#include <stdio.h>
 	int main()
 	{
@@ -133,11 +132,18 @@ var data =`#include <stdio.h>
    	 * before the variable name like &num.*/
    	printf("\\nAddress of variable num is: %p", &num);
   	 return 0;
-    }` 
+    }`
+
+// DATA FOR EXPLAINATION SECTION
+var explaination=`<b>line1:</b> <p>Including standard input output header file</p>
+<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>
+<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>
+<b>line9: </b><p>Print Statement which prints the <b>address</b> of the variable <b>num</b></p><p><b>%p</b> tells printf that the corresponding argument to be printed is of a pointer type data;</p>`
 
     var splittedData = data.split("\n")
+    var splitterExpl = explaination.split("\n")
 
-
+// SEEDING CODE DATA
     for(i=0; i<splittedData.length ; i++){
         var li = document.createElement('div')
         li.textContent=splittedData[i]
@@ -153,10 +159,3 @@ var data =`#include <stdio.h>
 
   
     console.log(code)
-
-
-
-
-    explaination=`Including standard input output header file
-    Declaration and initializing variables
-    This message will be printed in the console`
