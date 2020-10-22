@@ -6,12 +6,28 @@ var num2 = document.querySelector('.num2')
 var output1 = document.querySelector('.output1')
 var output2 = document.querySelector('.output2')
 var img = document.querySelector('.img')
+var text = document.querySelector('.text')
+
+
 
 // START FUNCTION
 const start =()=>{
     startBtn.classList.replace('rounded-button','hide')
     controller.classList.remove('hide')
     document.querySelector(`.hello0`).classList.add('highlight')
+    text.innerHTML='<b>line1:</b> <p>Including standard input output header file</p>'
+
+    window.addEventListener('keydown',(e)=>{
+    console.log(e)
+     if (e.key == 'ArrowUp') {
+        // up arrow
+        previous()
+    }
+    else if (e.key == 'ArrowDown') {
+        // down arrow
+        next()
+    }
+    })
 }
 const reset =()=>{
     controller.classList.remove('hide')
@@ -20,13 +36,15 @@ const reset =()=>{
 
     num1.textContent="---"
     num2.textContent="---"
-    output1.textContent="---"
-    output2.textContent="---"
+    output1.textContent=">"
+    output2.textContent=""
     num1.classList.remove('blip')
     num2.classList.remove('blip')
     output1.classList.remove('flash')
     output2.classList.remove('flash')
     img.classList.add('img2')
+
+    text.innerHTML='<p>*Understanding the concept of Pointers*</p>'
     
     ln=1
     pl=0
@@ -48,13 +66,17 @@ const next =()=>{
             num2.classList.add('blip')
             img.classList.remove('img2')
         }
+        if(pl==2){
+            text.innerHTML='<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>'
+        }
         if(pl==3){
-            output1.textContent="Value of variable num is: 10"
-            output1.classList.add('flash')
+            output1.textContent=">Value of variable num is: 10"
+            text.innerHTML='<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>'
+            
         }
         if(pl==4){
-            output2.textContent="Address of variable num is: 0x7fff5694dc58"
-            output2.classList.add('flash')
+            output2.textContent=">Address of variable num is: 0x7fff5694dc58"
+            text.innerHTML='<b>line9: </b><p>Print Statement which prints the <b>address</b> of the variable <b>num</b></p><p><b>%p</b> tells printf that the corresponding argument to be printed is of a pointer type data;</p>'
         }
         console.log(pl,ln) 
         pl=ln
@@ -66,14 +88,32 @@ const next =()=>{
     console.log(pl,ln) 
 }
 const previous =()=>{
+    
     if(pl !=0 ){
         pl--
         ln--
+        if (pl ==0){
+            text.innerHTML='<b>line1:</b> <p>Including standard input output header file</p>'
+        }
         if(ln == 8){
             pl=4  
         }
+        
+        if(pl==2){
+            num1.classList.remove('blip')
+            num2.classList.remove('blip')
+            num1.textContent="---"
+            num2.textContent="---"
+            img.classList.add('img2')
+        }
         if(pl==3 && ln==7){
+            text.innerHTML='<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>'
+            output1.innerHTML=""
             ln=4
+        }
+        if(pl==4){
+             output2.textContent=""
+            text.innerHTML='<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>'
         }
         document.querySelector(`.hello${pl}`).classList.add('highlight')
         document.querySelector(`.hello${ln}`).classList.remove('highlight')
@@ -113,3 +153,10 @@ var data =`#include <stdio.h>
 
   
     console.log(code)
+
+
+
+
+    explaination=`Including standard input output header file
+    Declaration and initializing variables
+    This message will be printed in the console`

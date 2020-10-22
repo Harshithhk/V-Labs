@@ -62,7 +62,9 @@ section {
   /* border-right: 1px solid green;
   border-left: 1px solid green;
   border-bottom: 1px solid green; */
-  background-color: rgb(246, 252, 253);
+  font-weight: bold;
+  /* background-color: rgb(246, 252, 253); */
+  background-color: rgb(187, 194, 250);
 }
 .output-heading {
   font-size: 1rem;
@@ -73,16 +75,20 @@ section {
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
-  font-weight: bold;
+
   /* align-items: center; */
   justify-content: center;
 }
 .output :nth-child(2) {
   margin-top: 0.5rem;
   padding: 0.5rem;
+  padding-left: 1rem;
+  color: #0d297c;
 }
 .output :nth-child(3) {
-  padding-left: 0.5rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  color: #0d297c;
 }
 .heading {
   height: calc(0.75 * var(--ph));
@@ -117,7 +123,7 @@ section {
   border-left: 5px solid rgb(10, 202, 10);
 }
 .comment {
-  color: gray;
+  color: rgb(153, 152, 152);
 }
 
 .padding1 {
@@ -125,7 +131,7 @@ section {
 }
 
 .controlers {
-  width: 50%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -183,9 +189,12 @@ button:active {
   justify-content: center;
   background-color: rgb(112, 107, 218);
   box-shadow: 0 0 5px black;
-  box-shadow: 0 0 10px greenyellow;
+  /* box-shadow: 0 0 10px black; */
   color: white;
   font-size: 1.5rem;
+}
+.rounded-button:hover {
+  background-color: rgb(84, 78, 199);
 }
 .reset-btn {
   cursor: pointer;
@@ -298,29 +307,31 @@ button:active {
 .text {
   margin: 0rem 2rem 0rem 2rem;
   font-size: 1rem;
+  animation: fade 1s ease-in-out;
 }
 
 .blip {
-  border: 5px solid yellow;
-  animation: blip 1.5s ease-in-out;
+  border: 3px solid var(--accent);
+  background: yellow;
+  animation: blip 1s ease-in-out;
 }
-.flash {
-  animation: flash 1s ease-in-out;
-}
+
 @keyframes blip {
   from {
     /* background: rgb(60, 60, 252); */
+    background: var(--accent);
+    color: white;
+  }
+  to {
     background: yellow;
-  }
-  to {
-    background: rgb(212, 214, 212);
-  }
-}
-/* @keyframes flash {
-  from {
-    color: blue;
-  }
-  to {
     color: black;
   }
-} */
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
