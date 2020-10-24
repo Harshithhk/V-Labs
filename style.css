@@ -20,43 +20,31 @@ header {
   box-shadow: 0 0 3px black;
 }
 section {
-  /* background-color: gray; */
   height: calc(100vh - var(--ph));
   width: 100vw;
   padding: calc(0.25 * var(--ph)) 0px var(--ph) 0px;
   display: flex;
-  /* overflow: hidden; */
-  /* background: rgb(54, 54, 54);
-
-  color: white; */
 }
 .code-output {
-  /* background-color: yellowgreen; */
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 .code {
-  /* background: rgb(155, 155, 155); */
-  /* height: 500px; */
   height: fit-content;
   display: flex;
-  /* width: 100%; */
   flex-direction: column;
   padding-bottom: 1rem;
   margin: 0rem 2rem 0rem 2rem;
   border-right: 1px solid green;
   border-left: 1px solid green;
-  /* border-bottom: 1px solid green; */
   background-color: rgb(246, 252, 253);
 }
 .da {
   position: relative;
 }
 .nav {
-  /* display: none; */
   z-index: 10;
   cursor: pointer;
   height: 45px;
@@ -82,29 +70,19 @@ section {
 }
 .output {
   height: fit-content;
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin: 0rem 2rem 0rem 2rem;
-  /* padding-top: 1rem; */
-  /* border-right: 1px solid green;
-  border-left: 1px solid green;
-  border-bottom: 1px solid green; */
   font-weight: bold;
-  /* background-color: rgb(246, 252, 253); */
   background-color: rgb(187, 194, 250);
 }
 .output-heading {
   font-size: 1rem;
   height: 2rem;
-  /* margin-top: 1rem; */
-  /* width: 50%; */
   background: rgb(223, 223, 223);
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
-
-  /* align-items: center; */
   justify-content: center;
 }
 .output :nth-child(2) {
@@ -127,21 +105,14 @@ section {
   align-items: center;
   font-size: 1.5rem;
   font-weight: 900;
-  /* color: white; */
-  /* letter-spacing: 2px; */
-  /* border-radius: 10px 10px 0px 0px; */
   margin-bottom: 0.5rem;
   color: black;
-  /* transition: 2s color ease-in-out; */
 }
 
 .hello {
-  /* color: red; */
-  /* height: 1rem; */
   padding: 0.2rem;
   height: fit-content;
   font-size: 1rem;
-  /* background: rgb(119, 118, 118); */
   padding-left: 30px;
   display: flex;
   align-items: center;
@@ -164,9 +135,7 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* align-items: center; */
   margin-top: var(--ph);
-  /* background-color: violet; */
 }
 
 .arrowKeys {
@@ -174,7 +143,6 @@ section {
   height: 100px;
   margin: 0 auto;
   margin-bottom: 0.5rem;
-  /* background-color: green; */
   background-image: url(./images/arrowKey.png);
   background-position: center;
   background-size: contain;
@@ -188,13 +156,11 @@ button {
   border: none;
   font-size: 1.25rem;
   color: white;
-  /* background-color: rgb(134, 132, 173); */
   background-color: var(--accent);
 }
 button:hover {
   cursor: pointer;
   background-color: #17389c;
-  /* box-shadow: 0 0 10px greenyellow; */
 }
 button:focus {
   outline: none;
@@ -215,7 +181,6 @@ button:active {
   text-align: center;
   background-color: rgb(112, 107, 218);
   box-shadow: 0 0 5px black;
-  /* box-shadow: 0 0 10px black; */
   color: white;
   font-size: 1.5rem;
 }
@@ -240,10 +205,8 @@ button:active {
 
 /* __________EXPLAINATION SECTION_________________ */
 .explaination {
-  /* background-color: rgb(90, 57, 167); */
   height: 100%;
   width: 100%;
-  /* height: fit-content; */
   display: flex;
   flex-direction: column;
 }
@@ -255,9 +218,6 @@ button:active {
   flex-direction: column;
   background-color: rgb(246, 252, 253);
   margin: 0rem 2rem 0rem 2rem;
-  /* border-right: 1px solid green;
-  border-left: 1px solid green;
-  border-bottom: 1px solid green; */
 }
 .visualization-heading {
   height: calc(0.75 * var(--ph));
@@ -275,11 +235,7 @@ button:active {
   width: 23ch;
   display: flex;
   margin-bottom: 0.5rem;
-  /* padding-left: 0; */
-
-  /* background: rgb(212, 214, 212); */
   background: rgb(212, 214, 212);
-  /* background: rgb(234, 240, 250); */
 }
 .sum div {
   height: 100%;
@@ -290,8 +246,6 @@ button:active {
   align-items: center;
   justify-content: center;
   background: rgb(199, 199, 199);
-  /* background: rgb(220, 250, 220); */
-
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -303,7 +257,7 @@ button:active {
   height: 100%;
   display: flex;
   align-items: center;
-  /* background: chartreuse; */
+
   justify-content: center;
   width: 100%;
   padding-left: 1rem;
@@ -321,7 +275,6 @@ button:active {
   min-width: 230px;
   opacity: 0.9;
   transition: 0.3s;
-  /* box-shadow: 0 0 5px var(--accent2); */
 }
 .img2 {
   background-image: url(./images/pic2-blank2-min.jpg);
@@ -332,8 +285,6 @@ button:active {
   height: 50%;
   background-color: rgb(246, 252, 253);
   margin: 0rem 2rem 0rem 2rem;
-  /* background-color: rgb(246, 252, 240); */
-  /* background-color: blueviolet; */
 }
 
 .text {
@@ -368,7 +319,6 @@ button:active {
 
 @keyframes blip {
   from {
-    /* background: rgb(60, 60, 252); */
     background: var(--accent);
     color: white;
   }
