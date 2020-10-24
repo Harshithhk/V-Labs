@@ -56,7 +56,8 @@ section {
   position: relative;
 }
 .nav {
-  display: none;
+  /* display: none; */
+  z-index: 10;
   cursor: pointer;
   height: 45px;
   width: 45px;
@@ -167,9 +168,6 @@ section {
   margin-top: var(--ph);
   /* background-color: violet; */
 }
-.hide {
-  display: none;
-}
 
 .arrowKeys {
   width: 50%;
@@ -221,6 +219,11 @@ button:active {
   color: white;
   font-size: 1.5rem;
 }
+
+..rounded-button-after {
+  display: none;
+}
+
 .rounded-button:hover {
   background-color: rgb(84, 78, 199);
 }
@@ -345,6 +348,24 @@ button:active {
   animation: blip 1s ease-in-out;
 }
 
+.blurr {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(236, 238, 236, 0.7);
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}
+
+.hide {
+  display: none;
+}
+
 @keyframes blip {
   from {
     /* background: rgb(60, 60, 252); */
@@ -429,9 +450,41 @@ button:active {
   }
   .explaination {
     margin-top: 16px;
+    padding-bottom: 100px;
   }
   .theory {
     margin-top: 16px;
+  }
+  .blurr {
+    display: block;
+  }
+  .rounded-button-after {
+    position: absolute;
+    z-index: 5;
+    height: 180px;
+    width: 180px;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(112, 107, 218);
+    box-shadow: 0 0 5px black;
+    /* box-shadow: 0 0 10px black; */
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .remove {
+    display: flex;
+  }
+  .hide {
+    display: none;
   }
 }
 
@@ -439,7 +492,7 @@ button:active {
   :root {
     font-size: 14px;
   }
-  .nav {
-    display: block;
+  .hide {
+    display: none;
   }
 }

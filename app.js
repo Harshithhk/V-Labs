@@ -69,7 +69,10 @@ const next =()=>{
             num2.classList.add('blip')
             img.classList.remove('img2')
             text.innerHTML=splitterExpl[1]
-            window.scrollTo(0,60)
+            window.scrollTo({
+                top:90,
+                behavior:'smooth'
+            })
         }
         if(ln==4){
             output1.textContent=">Value of variable num is: 10"
@@ -122,8 +125,12 @@ const previous =()=>{
 }
 
 const hide=()=>{
-    document.querySelector('.controlers-after').classList.add('hide')
-    document.querySelector('.nav').classList.remove('hide')
+    start()
+    document.querySelector('.rounded-button-after').classList.add("hide")
+    document.querySelector('.blurr').classList.add("hide")
+    var debug= document.querySelector('.up').classList.remove("hide")
+    var debug= document.querySelector('.down').classList.remove("hide")
+    console.log(debug)
 }
 
 // DATA FOR CODE SECTION
