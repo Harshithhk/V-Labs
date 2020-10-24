@@ -7,6 +7,7 @@ var output1 = document.querySelector('.output1')
 var output2 = document.querySelector('.output2')
 var img = document.querySelector('.img')
 var text = document.querySelector('.text')
+var da = document.querySelector('.da')
 
 
 
@@ -19,7 +20,6 @@ const start =()=>{
     text.innerHTML=splitterExpl[0]
 
     window.addEventListener('keydown',(e)=>{
-    console.log(e)
     
      if (e.key == 'ArrowUp') {
         previous()
@@ -27,6 +27,8 @@ const start =()=>{
     else if (e.key == 'ArrowDown') {
         next()
     }})
+    ln=1
+    pl=0
 }
 
 // RESET FUNCTION
@@ -66,16 +68,15 @@ const next =()=>{
             num1.classList.add('blip')
             num2.classList.add('blip')
             img.classList.remove('img2')
-        }
-        if(pl==2){
             text.innerHTML=splitterExpl[1]
+            window.scrollTo(0,60)
         }
-        if(pl==3){
+        if(ln==4){
             output1.textContent=">Value of variable num is: 10"
             text.innerHTML=splitterExpl[2]
             
         }
-        if(pl==4){
+        if(ln==8){
             output2.textContent=">Address of variable num is: 0x7fff5694dc58"
             text.innerHTML=splitterExpl[3]
         }
@@ -86,30 +87,29 @@ const next =()=>{
         }
         ln++
     }
-    console.log(pl,ln) 
+    console.log(pl,ln)
 }
 const previous =()=>{
     if(pl !=0 ){
         pl--
         ln--
-        if (pl ==2){
-            text.innerHTML=splitterExpl[0]
-        }
         if(ln == 8){
             pl=4  
         }
-        if(pl==3 && ln==7){
-            text.innerHTML=splitterExpl[1]
-            output1.innerHTML=""
-            ln=4
-        }   
-        if(pl==2){
+
+        if (pl ==2){
+            text.innerHTML=splitterExpl[0]
             num1.classList.remove('blip')
             num2.classList.remove('blip')
             num1.textContent="---"
             num2.textContent="---"
             img.classList.add('img2')
         }
+        if(pl==3){
+            text.innerHTML=splitterExpl[1]
+            output1.innerHTML=""
+            ln=4
+        }   
         if(pl==4){
              output2.textContent=""
             text.innerHTML=splitterExpl[2]
@@ -119,6 +119,11 @@ const previous =()=>{
         document.querySelector(`.hello${ln}`).classList.remove('highlight') 
     }
     console.log(pl,ln)
+}
+
+const hide=()=>{
+    document.querySelector('.controlers-after').classList.add('hide')
+    document.querySelector('.nav').classList.remove('hide')
 }
 
 // DATA FOR CODE SECTION
@@ -144,7 +149,9 @@ var explaination=`<b>line1:</b> <p>Including standard input output header file</
     var splitterExpl = explaination.split("\n")
 
 // SEEDING CODE DATA
+    
     for(i=0; i<splittedData.length ; i++){
+        
         var li = document.createElement('div')
         li.textContent=splittedData[i]
         li.className=`hello hello${i}`
@@ -154,8 +161,5 @@ var explaination=`<b>line1:</b> <p>Including standard input output header file</
         if(i>=5 &&i<8){
             li.classList.add('comment')
         }
-        code.appendChild(li)
+        da.appendChild(li)
     }
-
-  
-    console.log(code)
