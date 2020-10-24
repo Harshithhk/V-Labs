@@ -220,7 +220,7 @@ button:active {
   font-size: 1.5rem;
 }
 
-..rounded-button-after {
+.rounded-button-after {
   display: none;
 }
 
