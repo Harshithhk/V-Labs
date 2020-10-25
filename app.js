@@ -83,14 +83,14 @@ const next =()=>{
             output2.textContent=">Address of variable num is: 0x7fff5694dc58"
             text.innerHTML=splitterExpl[3]
         }
-        console.log(pl,ln) 
+        // console.log(pl,ln) 
         pl=ln
         if(ln == 4){
             ln=7
         }
         ln++
     }
-    console.log(pl,ln)
+    // console.log(pl,ln)
 }
 const previous =()=>{
     if(pl !=0 ){
@@ -121,16 +121,15 @@ const previous =()=>{
         document.querySelector(`.hello${pl}`).classList.add('highlight')
         document.querySelector(`.hello${ln}`).classList.remove('highlight') 
     }
-    console.log(pl,ln)
+    // console.log(pl,ln)
 }
 
 const hide=()=>{
     start()
     document.querySelector('.rounded-button-after').classList.add("hide")
     document.querySelector('.blurr').classList.add("hide")
-    var debug= document.querySelector('.up').classList.remove("hide")
-    var debug= document.querySelector('.down').classList.remove("hide")
-    console.log(debug)
+    document.querySelector('.up').classList.remove("hide")
+    document.querySelector('.down').classList.remove("hide")
 }
 
 // DATA FOR CODE SECTION
