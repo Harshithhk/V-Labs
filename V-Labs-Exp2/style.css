@@ -1,0 +1,456 @@
+:root {
+  --accent: #3652a4;
+  --accent2: #79df79;
+  --ph: 4rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  height: var(--ph);
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  letter-spacing: 1px;
+  box-shadow: 0 0 3px black;
+}
+section {
+  height: calc(100vh - var(--ph));
+  width: 100vw;
+  padding: calc(0.25 * var(--ph)) 0px var(--ph) 0px;
+  display: flex;
+}
+.code-output {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.code {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  margin: 0rem 2rem 0rem 2rem;
+  border-right: 1px solid green;
+  border-left: 1px solid green;
+  background-color: rgb(246, 252, 253);
+}
+.da {
+  position: relative;
+}
+.nav {
+  z-index: 10;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  box-shadow: 0px 0px 1px gray;
+  background-color: rgb(173, 147, 247);
+  border-radius: 5px;
+  position: absolute;
+}
+
+.up {
+  right: 0.5rem;
+  background: url(./images/upArrow1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.down {
+  bottom: 0;
+  right: 0.5rem;
+  background: url(./images/downArrow1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.output {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 2rem 0rem 2rem;
+  font-weight: bold;
+  background-color: rgb(187, 194, 250);
+}
+.output-heading {
+  font-size: 1rem;
+  height: 2rem;
+  background: rgb(223, 223, 223);
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  justify-content: center;
+}
+.output :nth-child(2) {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  color: #0d297c;
+}
+.output :nth-child(3) {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  color: #0d297c;
+}
+.heading {
+  height: calc(0.75 * var(--ph));
+  width: 100%;
+  background: var(--accent2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.hello {
+  padding: 0.2rem;
+  height: fit-content;
+  font-size: 1rem;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.highlight {
+  background-color: yellow;
+  border-left: 5px solid rgb(10, 202, 10);
+}
+.comment {
+  color: rgb(153, 152, 152);
+}
+
+.padding1 {
+  padding-left: 60px;
+}
+
+.controlers {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: var(--ph);
+}
+
+.arrowKeys {
+  width: 50%;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  background-image: url(./images/arrowKey.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+button {
+  margin: 0 auto;
+  height: 3rem;
+  width: 200px;
+  margin-top: 1.5rem;
+  border: none;
+  font-size: 1.25rem;
+  color: white;
+  background-color: var(--accent);
+}
+button:hover {
+  cursor: pointer;
+  background-color: #17389c;
+}
+button:focus {
+  outline: none;
+}
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 20px greenyellow;
+}
+.rounded-button {
+  height: 180px;
+  width: 180px;
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(112, 107, 218);
+  box-shadow: 0 0 5px black;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.rounded-button-after {
+  display: none;
+}
+
+.rounded-button:hover {
+  background-color: rgb(84, 78, 199);
+}
+.reset-btn {
+  cursor: pointer;
+  background-color: rgb(238, 235, 235);
+  width: 50%;
+  height: 30px;
+  color: rgb(105, 104, 104);
+}
+.reset-btn:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+/* __________EXPLAINATION SECTION_________________ */
+.explaination {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualization {
+  position: relative;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 252, 253);
+  margin: 0rem 2rem 0rem 2rem;
+}
+.visualization-heading {
+  height: calc(0.75 * var(--ph));
+  width: 100%;
+  background: var(--accent2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: calc(0.25 * var(--ph));
+}
+.sum {
+  height: 35px;
+  width: 23ch;
+  display: flex;
+  margin-bottom: 0.5rem;
+  background: rgb(212, 214, 212);
+}
+.sum div {
+  height: 100%;
+  width: 200px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(199, 199, 199);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.sum div span {
+  padding-left: 0.5rem;
+  font-weight: bold;
+}
+.num {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+}
+.img {
+  margin: auto;
+  margin-top: 2rem;
+  background-image: url(./images/pic2-min.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 70%;
+  min-width: 230px;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.img2 {
+  background-image: url(./images/pic2-blank2-min.jpg);
+  opacity: 0.7;
+  min-width: 230px;
+}
+.theory {
+  height: 50%;
+  background-color: rgb(246, 252, 253);
+  margin: 0rem 2rem 0rem 2rem;
+}
+
+.text {
+  margin: 0rem 2rem 0rem 2rem;
+  font-size: 1rem;
+  animation: fade 1s ease-in-out;
+}
+
+.blip {
+  border: 3px solid var(--accent);
+  background: yellow;
+  animation: blip 1s ease-in-out;
+}
+
+.blurr {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(236, 238, 236, 0.7);
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}
+
+.padding1 {
+  padding-left: 60px;
+}
+.padding2 {
+  padding-left: 90px;
+}
+.padding3 {
+  padding-left: 120px;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes blip {
+  from {
+    background: var(--accent);
+    color: white;
+  }
+  to {
+    background: yellow;
+    color: black;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .controlers {
+    width: 20%;
+  }
+  button {
+    width: 150px;
+  }
+  .code {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .output {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .visualization {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .theory {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  header {
+    height: calc(1.5 * var(--ph));
+    text-align: center;
+    font-size: 14px;
+  }
+  .heading {
+    border-top: 1px solid rgb(11, 177, 11);
+    border-bottom: 1px solid rgb(10, 177, 10);
+  }
+  section {
+    flex-direction: column;
+  }
+  .code {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    border: none;
+    background-color: rgb(235, 236, 236);
+  }
+  .output {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+  }
+  .controlers {
+    display: none;
+  }
+  .controlers-after {
+    width: 100vw;
+    margin: 1rem 0 1rem 0;
+  }
+  .visualization {
+    height: fit-content;
+  }
+  .hello {
+    height: fit-content;
+    padding-left: 10px;
+  }
+
+  .output-heading {
+    background: rgb(216, 216, 216);
+  }
+  .explaination {
+    margin-top: 16px;
+    padding-bottom: 100px;
+  }
+  .theory {
+    margin-top: 16px;
+  }
+  .blurr {
+    display: block;
+  }
+  .rounded-button-after {
+    position: absolute;
+    z-index: 5;
+    height: 180px;
+    width: 180px;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(112, 107, 218);
+    box-shadow: 0 0 5px black;
+    /* box-shadow: 0 0 10px black; */
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .remove {
+    display: flex;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    font-size: 14px;
+  }
+  .hide {
+    display: none;
+  }
+}
