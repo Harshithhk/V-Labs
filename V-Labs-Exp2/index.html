@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <h1>Understanding the concept of <span>Pointers</span></h1>
+        <h1>Understanding of <span>Recursion</span></h1>
     </header>
     <section>
         <div class="controlers-after hide" onclick="hide()">
@@ -51,30 +51,46 @@
             <div>
                 <div class="rounded-button" onclick="start()">START</div>
             </div>
-
-
         </div>
 
 
         <div class="explaination">
             <div class="visualization">
-                <div class="heading">Summary</div>
+                <div class="heading">Call Stack</div>
                 <div
-                    style="display: flex; width: 100%; justify-content: space-between; margin-top: 1rem; flex-wrap: wrap;">
-                    <div class="sum">
-                        <div>int<span>num </span></div><span class="num1 num">---</span>
+                    style="display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; justify-content: flex-start; margin-top: 1rem; flex-wrap: wrap; padding-left: 20px; padding-right: 20px;">
+                    <div class="sum sum1 hide" style="position: relative;">
+                        <span class="num1 num">factorial(5)</span>
+                        <div class="numxp1"></div>
+
                     </div>
-                    <div class="sum">
-                        <div><span>&num </span></div><span class="num2 num">---</span>
+                    <div class="sum sum2 hide" style="position: relative;">
+                        <span class="num2 num">factorial(4)</span>
+                        <div class="numxp2"></div>
+                        <div style="position: absolute; height: 100%; width: 40px; background-color:#F6FCFD;background-image: url(./images/Down_Arrow_Icon.png);background-size: contain; right: -40px; top: -115%; "
+                            class="arrowrotations">
+                        </div>
                     </div>
-                    <div class="sum">
-                        <div><span>&num </span></div><span class="num2 num">---</span>
+                    <div class="sum sum3 hide" style="position: relative;">
+                        <span class="num3 num">factorial(3)</span>
+                        <div class="numxp3"></div>
+                        <div style="position: absolute; height: 100%; width: 40px; background-color:#F6FCFD;background-image: url(./images/Down_Arrow_Icon.png);background-size: contain; right: -40px;top: -115%; "
+                            class="arrowrotations">
+                        </div>
                     </div>
-                    <div class="sum">
-                        <div><span>&num </span></div><span class="num2 num">---</span>
+                    <div class="sum sum4 hide" style="position: relative;">
+                        <span class="num4 num">factorial(2)</span>
+                        <div class="numxp4"></div>
+                        <div style="position: absolute; height: 100%; width: 40px; background-color:#F6FCFD;background-image: url(./images/Down_Arrow_Icon.png);background-size: contain; right: -40px;top: -115%; "
+                            class="arrowrotations">
+                        </div>
                     </div>
-                    <div class="sum">
-                        <div><span>&num </span></div><span class="num2 num">---</span>
+                    <div class="sum sum5 hide" style="position: relative;">
+                        <span class="num5 num">factorial(1)</span>
+                        <div class="numxp5"></div>
+                        <div style="position: absolute; height: 100%; width: 40px; background-color:#F6FCFD;background-image: url(./images/Down_Arrow_Icon.png);background-size: contain; right: -40px;top: -115%; "
+                            class="arrowrotations arrowrotationsshow hide">
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="img img2"></div> -->
@@ -82,7 +98,10 @@
             <div class="theory">
                 <div class="heading">Explanation</div>
                 <div class="text">
-                    <p>*Understanding the concept of Pointers*</p>
+                    <p>Understanding the concept of <b>Recursion</b> with an example program to calculate the factorial
+                        of a given
+                        number
+                    </p>
                 </div>
             </div>
 

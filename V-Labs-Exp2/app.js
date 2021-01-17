@@ -21,10 +21,8 @@ const start =()=>{
 
     window.addEventListener('keydown',(e)=>{
     
-     if (e.key == 'ArrowUp') {
-        previous()
-    }
-    else if (e.key == 'ArrowDown') {
+     
+    if (e.key == 'ArrowDown') {
         next()
     }})
     ln=1
@@ -37,17 +35,31 @@ const reset =()=>{
     document.querySelector(`.hello0`).classList.add('highlight')
     document.querySelector(`.hello${pl}`).classList.remove('highlight')
 
-    num1.textContent="---"
-    num2.textContent="---"
+   
     output1.textContent=">"
     output2.textContent=""
-    num1.classList.remove('blip')
-    num2.classList.remove('blip')
+    document.querySelector(`.numxp1`).innerHTML = "" 
+    document.querySelector(`.numxp2`).innerHTML = ""
+    document.querySelector(`.numxp3`).innerHTML = ""
+    document.querySelector(`.numxp4`).innerHTML = ""
+    document.querySelector(`.numxp5`).innerHTML = ""
     output1.classList.remove('flash')
     output2.classList.remove('flash')
-    img.classList.add('img2')
+    text.innerHTML='<p>Understanding the concept of <b>Recursion</b> with an example program to calculate the factorial of a given number </p>'
+     enteredRecursion=false
+     rcount=0
+     fact = 5
+     factcount = 1
+     end = false
 
-    text.innerHTML='<p>*Understanding the concept of Pointers*</p>'
+    const sums = document.querySelectorAll('.sum')
+    for(let sum of sums){
+        sum.classList.add('hide')
+    }
+    const rs = document.querySelectorAll('.arrowrotations')
+            for(let r of rs){
+                r.classList.remove('rotations')
+            }
     
     ln=1
     pl=0
@@ -59,6 +71,8 @@ var pl=0
 var enteredRecursion = false
 var rcount = 0;
 var end = false
+var fact = 5
+var factcount = 1
 
 const highlighter=(a,b,type)=>{
     document.querySelector(`.hello${a}`).classList.add(type)
@@ -67,19 +81,52 @@ const highlighter=(a,b,type)=>{
 // NEXT FUNCTION
 const next =()=>{
 
+    if(pl==0){
+        text.innerHTML=splitterExpl[1]
+    }
+    
+
     if(enteredRecursion && !end){
         rcount+=1
         console.log(rcount);
         highlighter(ln,pl,'highlight')
         pl=ln
+
+        if(rcount == 1){
+            text.innerHTML = splitterExpl[4]
+        }
         if(rcount == 2 || rcount ==6 || rcount == 10||rcount == 14){
             ln = 5
         }
         if(rcount == 4 || rcount ==8 || rcount == 12||rcount == 16){
+            // <span> factorial</span>(1-0) 
             ln = 2
+            document.querySelector(`.sum${factcount+1}`).classList.remove('hide')
+            document.querySelector(`.numxp${factcount}`).innerHTML = `${fact} * <span> factorial</span>(${fact}-1) `
+            fact --
+            factcount++
+
         }
         if(rcount == 19){
             ln = 10
+            document.querySelector(`.numxp${factcount}`).innerHTML = `<span class='blip factansnobr'>${fact}</span>`
+            document.querySelector(`.numxp1`).innerHTML = "5 * <span>24</span> &nbsp; = <span class='blip factans'>120</span>"
+            document.querySelector(`.numxp2`).innerHTML = "4 * <span>6</span>  &nbsp; = <span class='blip factansnobr'>24</span>"
+            document.querySelector(`.numxp3`).innerHTML = "3 * <span>2</span>  &nbsp; = <span class='blip factansnobr'>6</span>"
+            document.querySelector(`.numxp4`).innerHTML = "2 * <span>1</span>  &nbsp; = <span class='blip factansnobr'>2</span>"
+            document.querySelector('.factfuncitonnn').classList.remove('factfuncitonex')
+            const rs = document.querySelectorAll('.arrowrotations')
+            for(let r of rs){
+                r.classList.add('rotations')
+            }
+            // document.querySelector('.arrowrotationshide').classList.add('hide')
+            // document.querySelector('.arrowrotationsshow').classList.remove('hide')
+            
+            
+
+        }
+        if(rcount == 20){
+            output1.textContent = "Result : 120"
         }
         if(rcount == 22){
             end = true
@@ -89,17 +136,21 @@ const next =()=>{
 
     if(!enteredRecursion){
         highlighter(ln,pl,'highlight')
+
         
         pl=ln 
         if(ln==11){
         enteredRecursion = true
-        // pl= 2
-       ln = 2
+        document.querySelector('.sum1').classList.remove('hide')
+        document.querySelector('.factfuncitonnn').classList.add('factfuncitonex')
+        text.innerHTML=splitterExpl[3]
+        ln = 2
         }
         if(ln!==11){
         ln++
         }
         if(ln==2){
+            text.innerHTML=splitterExpl[2]
             ln=9
             pl=1
         }
@@ -155,7 +206,7 @@ const hide=()=>{
 }
 
 // DATA FOR CODE SECTION
-var data =`#include <iostream>
+var data =`#include <<iostream>iostream>
 using namespace std;
 //Factorial function
 int factorial(int n) {
@@ -166,15 +217,16 @@ int factorial(int n) {
 }
 int main() {
    int num = 5;
-   cout<<"Result : "<<factorial(num);
+   cout<<"Result : "<< <span class="factfuncitonnn">factorial(num)</span>;
    return 0;
 }`
 
 // DATA FOR EXPLAINATION SECTION
-var explaination=`<b>line1:</b> <p>Including standard input output header file</p>
-<b>line4: </b><p>Declaration and assignment of variable of <b>type integer</b> and <b>name num</b></p>
-<b>line5: </b><p>Print Statement which prints the <b>value</b> of the variable <b>num</b></p><p><b>%d</b> tells printf that the corresponding argument is to be treated as an integer value;</p>
-<b>line9: </b><p>Print Statement which prints the <b>address</b> of the variable <b>num</b></p><p><b>%p</b> tells printf that the corresponding argument to be printed is of a pointer type data;</p>`
+var explaination=`<b>line1:</b> <p>iostream is a header file that contains functions for input/output operations </p>
+<p>All the files in the C++ standard library declare all of its entities within the std namespace</p>
+<p> main() is the entry point of the application</p>
+<p>Upon reaching this line of code the factorial funcion is called, passing the variable value of num</p>
+<p>The factorial function will keep calling itself untill the base case is reached (which is 'n <= 1' in our case) and recursively returns the final value</p>`
 
     var splittedData = data.split("\n")
     var splitterExpl = explaination.split("\n")
@@ -186,7 +238,7 @@ var explaination=`<b>line1:</b> <p>Including standard input output header file</
         
         
         var li = document.createElement('div')
-        li.textContent=splittedData[i]
+        li.innerHTML=splittedData[i]
         console.log(li.textContent,i)
         li.className=`hello hello${i}`
         if(i==4 || i==6 || i==10 || i==11 || i==12){

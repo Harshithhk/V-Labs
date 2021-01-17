@@ -232,14 +232,14 @@ button:active {
 }
 .sum {
   height: 35px;
-  width: 23ch;
+  width: 30ch;
   display: flex;
   margin-bottom: 0.5rem;
   background: rgb(212, 214, 212);
 }
 .sum div {
   height: 100%;
-  width: 200px;
+  width: 400px;
   font-weight: normal;
   font-size: 0.9rem;
   display: flex;
@@ -323,9 +323,34 @@ button:active {
   padding-left: 120px;
 }
 
+
+.factfuncitonex{
+  background-color: rgb(117, 185, 6);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.factans{
+  padding-right: 8px;
+  margin-left: 3px;
+}
+.factansnobr{
+    border: none;
+    padding-right: 8px;
+    margin-left: 3px;
+}
+
+
+.rotations{
+  transform: rotateX(180deg) translateY(-115%);
+  
+
+}
+
 .hide {
   display: none;
 }
+
 
 @keyframes blip {
   from {
