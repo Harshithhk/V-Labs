@@ -203,6 +203,7 @@ const hide=()=>{
     document.querySelector('.rounded-button-after').classList.add("hide")
     document.querySelector('.blurr').classList.add("hide")
     document.querySelector('.up').classList.remove("hide")
+    document.querySelector('.down').classList.remove("hide")
 }
 
 // DATA FOR CODE SECTION

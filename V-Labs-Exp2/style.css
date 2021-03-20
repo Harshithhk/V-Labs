@@ -59,6 +59,7 @@ section {
   right: 0.5rem;
   background: url(./images/upArrow1.jpg);
   background-repeat: no-repeat;
+  display: none;
   background-size: contain;
 }
 .down {
